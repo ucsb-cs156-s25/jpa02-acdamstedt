@@ -10,11 +10,13 @@ public class TeamTest {
 
     Team team;
     Team otherTeam;
+    Team otherOtherTeam;
 
     @BeforeEach
     public void setup() {
         team = new Team("test-team");   
         otherTeam = new Team("test-team"); 
+        otherOtherTeam = new Team("wrong");
     }
 
     @Test
@@ -43,6 +45,7 @@ public class TeamTest {
     @Test
     public void equals_case3_works() {
         assertTrue(team.equals(otherTeam));
+        assertTrue(!team.equals(otherOtherTeam));
     }
 
     @Test
